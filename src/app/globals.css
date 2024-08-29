@@ -49,6 +49,25 @@ input{
   flex-basis: 50%;
   
 } */
+.img{
+  transition: all 0.5s ease-in;
+  /* transition-delay: 0.25s; */
+}
+.img.active{
+  /* animation: expandImage 2s forwards;
+  animation-delay: 0.75s; */
+  transition: all 0.5s ease-in;
+  transition-delay: 0.4s;
+}
+
+@keyframes expandImage {
+  0%{
+    height: 0;
+  }
+  100%{
+    height: 100%;
+  }
+}
 @keyframes linedown {100% {height: 100%}}
 @layer utilities {
   .text-balance {
