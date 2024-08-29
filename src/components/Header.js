@@ -22,8 +22,8 @@ export default function Header(){
                 <div className="relative z-[3]">
                     <span className={active ? "index active font-bold text-white" : "index font-bold text-black"} onClick={(e) => toggleNav(e)}>INDEX</span>
                 </div>
-                <div className={`${active ? "nav-links active absolute right-[-15px] top-[-15px] pt-[12%] pb-[5%] w-full max-h-[500px] max-w-[500px] overflow-hidden z-[2] bg-black text-white" : "nav-links absolute right-[-15px] top-[-15px] pt-[12%] pb-[5%] w-full max-h-0 max-w-0 overflow-hidden z-[2] bg-black text-white"}`}>
-                    <Link className="flex items-baseline justify-end mr-[15px]" href="/">
+                <div className={`${active ? "nav-links active absolute right-[-15px] top-[-15px] pt-[2rem] pb-[5%] w-full max-h-[500px] max-w-[500px] overflow-hidden z-[2] bg-black text-white" : "nav-links absolute right-[-15px] top-[-15px] pt-[2rem] pb-[5%] w-full max-h-0 max-w-0 overflow-hidden z-[2] bg-black text-white"}`}>
+                    <Link className="flex items-baseline justify-end mr-[15px] mt-[10px]" href="/">
                         <div>01.</div>
                         <h2>HOME</h2>
                     </Link>
