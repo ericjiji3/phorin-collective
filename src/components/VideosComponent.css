@@ -1,0 +1,25 @@
+.video-container div{
+    height: 500px!important;
+    display: flex;
+    justify-content: center;
+}
+.video-container video{
+    width: fit-content!important;
+}
+.thumbnail video{
+    object-fit: cover;
+}
+.track-container{
+    
+}
+input[type='range']{
+    background: transparent;
+}
+input[type='range']::-webkit-slider-thumb {
+    width: 2px;
+    -webkit-appearance: none;
+    height: 180px;
+    background: black;
+    border-radius: 2px;
+    
+  }
