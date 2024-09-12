@@ -3,6 +3,10 @@ import React from 'react'
 import { useEffect, useState, useRef } from 'react';
 import ReactPlayer from 'react-player'
 import Image from 'next/image';
+import Play from '@/../public/images/play.png';
+import Pause from '@/../public/images/pause.png';
+import Volume from '@/../public/images/volume.png';
+import Fullscreen from '@/../public/images/fullscreen.png';
 import './VideosComponent.css';
 
 const styles = {
@@ -31,6 +35,7 @@ export default function VideosComponent(props){
       );
 
     const playerRefs = useRef(props.videos.map(() => React.createRef()));
+      
 
     // Toggle play/pause for a specific video
     const handlePlayPause = (index) => {
@@ -61,13 +66,44 @@ export default function VideosComponent(props){
         setVideoStates(newVideoStates);
     };
 
+    // Function to trigger fullscreen mode
+    const handleFullscreen = (index) => {
+        const player = playerRefs.current[index]; // Get the specific ReactPlayer instance
+    if (player && player.current) {
+      const videoElement = player.current.getInternalPlayer(); // Access the native video element
+      if (videoElement.requestFullscreen) {
+        videoElement.requestFullscreen();
+      } else if (videoElement.webkitRequestFullscreen) { // Safari
+        videoElement.webkitRequestFullscreen();
+      } else if (videoElement.mozRequestFullScreen) { // Firefox
+        videoElement.mozRequestFullScreen();
+      } else if (videoElement.msRequestFullscreen) { // IE/Edge
+        videoElement.msRequestFullscreen();
+      }
+      // Show native controls in fullscreen
+      videoElement.controls = true;
+
+      // Listen for exit fullscreen to remove controls
+      document.addEventListener('fullscreenchange', () => {
+        if (!document.fullscreenElement) {
+          videoElement.controls = false; // Hide native controls on exit fullscreen
+        }
+      });
+      // Show native controls while in fullscreen
+      videoElement.controls = true;
+    }
+      };
+
     return(
-        <div>
-            <div>
+        // className='flex flex-row-reverse justify-center gap-[50px]'
+        <div >
+            <div className='flex justify-center'>
             {
                 props.videos.map((video, index) => {
                     return(
-                        <div key={index} className={activeInd == index ? 'video-container flex flex-col justify-center items-center' : 'video-container hidden justify-center'}>
+                        <div key={index} className={activeInd == index ? 'video-container flex flex-col justify-center w-fit items-center' : 'video-container hidden justify-center w-fit'}>
+                            <div className='flex items-baseline'>
+                            <div className='player-container' >
                             {hasWindow && <ReactPlayer 
                                 url={"https:" + video.fields.file.url} 
                                 controls={false} 
@@ -75,45 +111,61 @@ export default function VideosComponent(props){
                                 playing={videoStates[index].isPlaying}
                                 volume={videoStates[index].volume}
                                 onProgress={(progress) => handleProgress(index, progress)}/>}
-                            {/* Custom Controls for each video */}
-                            <div className="controls">
+                                <div className="controls mt-[10px]">
                                 {/* Play/Pause Button */}
-                                <button onClick={() => handlePlayPause(index)}>
-                                {videoStates[index].isPlaying ? 'Pause' : 'Play'}
+                                <button onClick={() => handlePlayPause(index)} className='pr-[5px]'>
+                                {videoStates[index].isPlaying ? 
+                                <Image src={Pause} width={10} height={10}/>
+                                : 
+                                <Image src={Play} width={10} height={10}/>
+                                }
                                 </button>
-
-                                {/* Volume Control */}
-                                <label>
-                                Volume:
+                                
+                                {/* Progress Bar (Seek) */}
+                                <label className='w-full flex'>
                                 <input
                                     type="range"
                                     min="0"
                                     max="1"
                                     step="0.01"
-                                    value={videoStates[index].volume}
-                                    onChange={(event) => handleVolumeChange(index, event)}
-                                />
-                                </label>
-
-                                {/* Progress Bar (Seek) */}
-                                <label>
-                                Progress:
-                                <input
-                                    type="range"
-                                    min="0"
-                                    max="1"
-                                    step="0"
+                                    className='progress-bar'
                                     value={videoStates[index].played}
                                     onChange={(event) => handleSeek(index, event)}
                                 />
                                 </label>
+
                             </div>
+                            </div>
+                            
+                            <div className='relative bottom-[20px] ml-[5px] text-center flex flex-col items-center'>
+                            {/* Volume Control */}
+                            <label className='flex flex-col justify-center'>
+                                
+                                <input
+                                    type="range"
+                                    min="0"
+                                    max="1"
+                                    orient="vertical"
+                                    className='volume-bar'
+                                    step="0.01"
+                                    value={videoStates[index].volume}
+                                    onChange={(event) => handleVolumeChange(index, event)}
+                                />
+                                <Image src={Volume} width={10} height={10} className='pt-[5px]'/>
+                                </label>
+                                
+                                <button onClick={(event) => handleFullscreen(index)} className='mt-[5px]'>
+                                    <Image src={Fullscreen} width={20}/>
+                                </button>
+                                </div>
+                            </div>
+                            
                         </div>
                     )
                 })
             }
             </div>
-            <div className='flex justify-center relative'>
+            <div className='flex justify-center relative mt-[2rem]'>
             {
                 props.videos.map((video, index) => {
                     return(
