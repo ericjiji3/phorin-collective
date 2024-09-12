@@ -3,18 +3,30 @@
     display: flex;
     justify-content: center;
 }
+.video-container .controls{
+    height: unset!important;
+    display: block;
+    flex-direction: column;
+}
 .video-container video{
     width: fit-content!important;
 }
 .thumbnail video{
     object-fit: cover;
+    /* outline: none;
+    z-index: 0; */
+}
+.thumbnail.active video{
+    outline: 2px solid #000000;
+    position: relative;
+    z-index: 2;
 }
 .track-container{
     
 }
-input[type='range']{
+ /* input[type='range']{
     background: transparent;
-}
+} */
 input[type='range']::-webkit-slider-thumb {
     width: 2px;
     -webkit-appearance: none;
@@ -22,4 +34,4 @@ input[type='range']::-webkit-slider-thumb {
     background: black;
     border-radius: 2px;
     
-  }
+  } 

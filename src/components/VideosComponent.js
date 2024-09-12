@@ -13,6 +13,7 @@ const styles = {
 
 export default function VideosComponent(props){
     const [hasWindow, setHasWindow] = useState(false);
+    const [activeInd, setActiveInd] = useState(0);
 
     useEffect(()=>{
         if(typeof window != undefined){
@@ -66,7 +67,7 @@ export default function VideosComponent(props){
             {
                 props.videos.map((video, index) => {
                     return(
-                        <div key={index} className='video-container flex justify-center'>
+                        <div key={index} className={activeInd == index ? 'video-container flex flex-col justify-center items-center' : 'video-container hidden justify-center'}>
                             {hasWindow && <ReactPlayer 
                                 url={"https:" + video.fields.file.url} 
                                 controls={false} 
@@ -75,26 +76,14 @@ export default function VideosComponent(props){
                                 volume={videoStates[index].volume}
                                 onProgress={(progress) => handleProgress(index, progress)}/>}
                             {/* Custom Controls for each video */}
-                            
-                        </div>
-                    )
-                })
-            }
-            </div>
-            <div className='flex justify-center relative'>
-            {
-                props.videos.map((video, index) => {
-                    return(
-                        <div key={index} className='thumbnail relative'>
-                           {hasWindow && <ReactPlayer url={"https:" + video.fields.file.url} width={150} height={150} controls={false}/>}
-                           <div className="controls">
+                            <div className="controls">
                                 {/* Play/Pause Button */}
                                 <button onClick={() => handlePlayPause(index)}>
                                 {videoStates[index].isPlaying ? 'Pause' : 'Play'}
                                 </button>
 
                                 {/* Volume Control */}
-                                {/* <label>
+                                <label>
                                 Volume:
                                 <input
                                     type="range"
@@ -104,11 +93,11 @@ export default function VideosComponent(props){
                                     value={videoStates[index].volume}
                                     onChange={(event) => handleVolumeChange(index, event)}
                                 />
-                                </label> */}
+                                </label>
 
                                 {/* Progress Bar (Seek) */}
-                                <label className='track-container absolute left-0 top-[-15px]'>
-                                
+                                <label>
+                                Progress:
                                 <input
                                     type="range"
                                     min="0"
@@ -123,8 +112,18 @@ export default function VideosComponent(props){
                     )
                 })
             }
-            <div className='absolute w-[2px] h-[110%] block bg-black top-[50%] translate-y-[-50%]'>
-            </div>    
+            </div>
+            <div className='flex justify-center relative'>
+            {
+                props.videos.map((video, index) => {
+                    return(
+                        <div key={index} className={activeInd == index ? 'thumbnail active relative' : 'thumbnail relative'} onClick={() => setActiveInd(index)}>
+                           {hasWindow && <ReactPlayer url={"https:" + video.fields.file.url} width={150} height={150} controls={false}/>}
+                           
+                        </div>
+                    )
+                })
+            }
             </div>
         </div>
     )
