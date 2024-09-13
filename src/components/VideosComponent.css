@@ -4,6 +4,10 @@
     display: flex;
     justify-content: center;
 }
+.thumbnail div{
+    width: 130px!important;
+    height: 130px!important;
+}
 .video-container .controls{
     height: unset!important;
     display: flex;

@@ -37,18 +37,18 @@ export default function Contact() {
         }
       };
   return (
-    <div className="absolute top-0 px-[3.75rem] pt-[6.88rem] pb-[2.5rem] flex flex-wrap gap-x-[10%] w-full h-full">
-        <div className="absolute left-[35%] top-[60%] z-[1]">
+    <div className="absolute top-0 px-[1rem] md:px-[3.75rem] pt-[5.5rem] md:pt-[6.88rem] pb-[2.5rem] flex flex-col md:flex-row justify-between flex-wrap gap-x-[10%] w-full h-full">
+        <div className="absolute right-[1rem] top-[39%] md:top-[60%] z-[1]">
             <h1>SIGN UP</h1>
             <h1>NEWSLETTER</h1>
         </div>
-      <div className="relative w-[45%] h-full overflow-hidden">
+      <div className="relative w-full md:w-[45%] h-[47.5%] md:h-full overflow-hidden">
         <span className="block mb-[0.6rem]"><b>CONTACT</b></span>
         <Image src={ContactImage} className="w-full h-full object-cover object-top" width={500} alt="oops"/>
       </div>
-      <div className="w-[45%] h-full flex flex-col">
+      <div className="w-full md:w-[45%] h-[47.5%] md:h-full flex flex-col">
         <span className="block mb-[0.6rem]"><b>PHORIN COLLECTIVE</b></span>
-        <span className="block mb-[3rem]">Lorem ipsum odor amet, consectetuer adipiscing elit. Aenean lacinia sem taciti interdum natoque magna faucibus. Lorem proin ultricies morbi aliquam ultricies vestibulum facilisi vestibulum eu.</span>
+        <span className="block mb-[1.5rem] md:mb-[3rem]">Lorem ipsum odor amet, consectetuer adipiscing elit. Aenean lacinia sem taciti interdum natoque magna faucibus. Lorem proin ultricies morbi aliquam ultricies vestibulum facilisi vestibulum eu.</span>
         <div>
             <form onSubmit={handleSubmit}>
                 <div className="flex flex-col">
@@ -59,7 +59,7 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="border-b-[1px] border-black mb-[2rem]"
+                    className="border-b-[1px] border-black mb-[1rem] md:mb-[2rem]"
                     required
                     />
                 </div>
@@ -71,7 +71,7 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="border-b-[1px] border-black mb-[3rem]"
+                    className="border-b-[1px] border-black mb-[1rem] md:mb-[3rem]"
                     required
                     />
                 </div>
@@ -82,10 +82,10 @@ export default function Contact() {
             </form>
         </div>
         <div className="h-full relative">
-          <div className="absolute bottom-0 right-0 flex flex-col">
-            <a className="block w-fit mb-[0.3rem] ml-auto mr-0" href="https://www.instagram.com/phorin.collective/" target="_blank"><u>Instagram: @phorin.collective</u></a>
-            <a className="block w-fit mb-[0.3rem] ml-auto mr-0" href="https://www.tiktok.com/@phorin.collective?lang=en" target="_blank"><u>TikTok: @phorin.collective</u></a>
-            <a className="block w-fit ml-auto mr-0" href="https://www.youtube.com/@Phorincollective" target="_blank"><u>YouTube: Phorin Collective</u></a>
+          <div className="absolute bottom-0 left-0 flex flex-col">
+            <a className="block text-xs w-fit mb-[0.3rem] md:ml-auto mr-0" href="https://www.instagram.com/phorin.collective/" target="_blank"><u>Instagram: @phorin.collective</u></a>
+            <a className="block text-xs w-fit mb-[0.3rem] md:ml-auto mr-0" href="https://www.tiktok.com/@phorin.collective?lang=en" target="_blank"><u>TikTok: @phorin.collective</u></a>
+            <a className="block text-xs w-fit md:ml-auto md:mr-0" href="https://www.youtube.com/@Phorincollective" target="_blank"><u>YouTube: Phorin Collective</u></a>
           </div>
         </div>
       </div>

@@ -96,7 +96,7 @@ export default function VideosComponent(props){
 
     return(
         // className='flex flex-row-reverse justify-center gap-[50px]'
-        <div >
+        <div>
             <div className='flex justify-center'>
             {
                 props.videos.map((video, index) => {
@@ -165,7 +165,7 @@ export default function VideosComponent(props){
                 })
             }
             </div>
-            <div className='flex justify-center relative mt-[2rem]'>
+            <div className='flex justify-center relative mt-[2rem] mx-[5rem]'>
             {
                 props.videos.map((video, index) => {
                     return(

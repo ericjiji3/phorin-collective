@@ -6,7 +6,7 @@ export default async function Videos(){
     console.log(videos.items[0].fields.videos);
 
     return(
-        <div className="px-[3.75rem] pb-[2.5rem]">
+        <div className="px-[1rem] md:px-[3.75rem] pb-[2.5rem]">
             <VideosComponent videos={videos.items[0].fields.videos}/>
         </div>
     )
