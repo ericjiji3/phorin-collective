@@ -5,16 +5,16 @@
     transition: unset;
 }
 .nav-links{
-    transition: max-height 1.5s ease, max-width 1.5s ease 1s;
+    transition: max-height 1.5s ease, max-width 1.5s ease 0.5s;
 }
 .nav-links.active{
-    transition: max-height 2s ease 0.5s, max-width 1.5s ease;
+    transition: max-height 2s ease 0.5s, max-width 2s ease;
 }
 @media(max-width: 768px){
     .nav-links{
         transition: max-height 1.5s ease, max-width 1.5s ease 0.5s;
     }
     .nav-links.active{
-        transition: max-height 2s ease 0.5s, max-width 2s ease;
+        transition: max-height 2s ease 1s, max-width 2s ease;
     }
 }

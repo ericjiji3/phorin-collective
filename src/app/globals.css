@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@font-face {
+  font-family: 'Helvetica Medium';
+  src: url('../../public/fonts/HelveticaNeueMedium.otf');
+}
+@font-face {
+  font-family: 'Helvetica Light';
+  src: url('../../public/fonts/HelveticaNeueLight.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Helvetica Light';
+  src: url('../../public/fonts/HelveticaNeueLightItalic.otf');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Helvetica Light';
+  src: url('../../public/fonts/HelveticaNeueMedium.otf');
+  font-weight: bold;
+  font-style: normal;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -22,10 +46,16 @@ body {
   height: -webkit-fill-available;
 }
 h1{
+  line-height: 5rem;
   font-size: 5rem;
+  font-family: 'Helvetica Medium';
 }
 h2{
   font-size: 3rem;
+  font-family: 'Helvetica Medium';
+}
+span, p, a, input, button, div{
+  font-family: 'Helvetica Light';
 }
 @media(max-width: 768px){
   h1{

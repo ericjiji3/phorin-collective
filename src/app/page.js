@@ -6,9 +6,15 @@ export default function Home() {
   return (
     <div className="absolute top-0 px-[1rem] md:px-[3.75rem] pt-[5.5rem] md:pt-[6.88rem] pb-[1.5rem] md:pb-[2.5rem] flex flex-col-reverse md:flex-row flex-wrap gap-x-[10%] w-full h-full justify-between">
       <div className="w-full md:w-[45%] h-[49%] md:h-full flex flex-col">
-        <div className="mb-[1rem] md:mb-[5rem]">
-          <h1>PHORIN COLLECTIVE</h1>
-          <span>A collective based in Austin, TX. Focused on pushing forward fashion, art, and community.</span>
+        <div className="slide mb-[1rem] md:mb-[5rem] relative">
+          <div className="relative overflow-hidden">
+            <h1>PHORIN COLLECTIVE</h1>
+            <div className="absolute top-0 left-0 block w-full h-full bg-white animate-slide"></div>
+          </div>
+          <div className="relative overflow-hidden">
+            <span>A collective based in Austin, TX. Focused on pushing forward fashion, art, and community.</span>
+            <div className="absolute top-0 left-0 block w-full h-full bg-white animate-slideDelay"></div>
+          </div>
         </div>
         
         <div className="h-full relative home-nav">
@@ -21,7 +27,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="w-full md:w-[45%] h-[49%] md:h-full">
+      <div className="relative w-full md:w-[45%] h-[49%] md:h-full overflow-hidden">
+      <div className="absolute top-0 left-0 block w-full h-full bg-white animate-slideY"></div>
         <Image src={HomeImage} className="w-full h-full object-cover" width={500} alt="oops"/>
       </div>
     </div>

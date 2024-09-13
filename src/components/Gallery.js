@@ -7,6 +7,7 @@ export default function Gallery(props){
     console.log(props.images[0].fields.file)
     return(
         <div>
+     
             <Masonry
                 breakpointCols={3}
                 className="my-masonry-grid"
