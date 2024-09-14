@@ -55,7 +55,7 @@ export default function Contact() {
         
         <div className="relative overflow-hidden">
           <div className="block w-full h-full absolute top-0 left-0 bg-white animate-slideY" style={{ animationDelay: `1.75s!important`}}></div>
-          <Image src={ContactImage} className="w-full h-[400px] md:h-full object-cover object-top" width={500} alt="oops"/>
+          <Image src={ContactImage} loading="eager" className="w-full h-[400px] md:h-full object-cover object-top" width={500} alt="oops"/>
         </div>
       </div>
       <div className="relative overflow-hidden w-full md:w-[45%] h-[47.5%] md:h-full flex flex-col mt-[2.5rem] md:mt-0">

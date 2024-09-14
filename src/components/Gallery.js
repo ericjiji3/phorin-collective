@@ -28,7 +28,7 @@ export default function Gallery(props){
                                     >
 
                                     </div>
-                                    <Image src={"https:" + image.fields.file.url} width={image.fields.file.details.image.width} height={image.fields.file.details.image.height} alt="oops"/>
+                                    <Image src={"https:" + image.fields.file.url} width={image.fields.file.details.image.width} height={image.fields.file.details.image.height} alt="oops" loading={index < 7 ? "eager" : "lazy"}/>
                                     <span>{image.fields.title}</span>
                                 </div>
                             )

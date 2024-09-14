@@ -118,9 +118,9 @@ export default function VideosComponent(props){
                                 {/* Play/Pause Button */}
                                 <button onClick={() => handlePlayPause(index)} className='pr-[5px]'>
                                 {videoStates[index].isPlaying ? 
-                                <Image src={Pause} width={10} height={10}/>
+                                <Image className="w-[20px] h-[20px] md:h-full md:w-full" src={Pause} width={10} height={10}/>
                                 : 
-                                <Image src={Play} width={10} height={10}/>
+                                <Image className="w-[20px] h-[20px] md:h-full md:w-full" src={Play} width={10} height={10}/>
                                 }
                                 </button>
                                 
@@ -140,7 +140,7 @@ export default function VideosComponent(props){
                             </div>
                             </div>
                             
-                            <div className='relative bottom-[20px] ml-[5px] text-center flex flex-col items-center'>
+                            <div className='relative bottom-[30px] md:bottom-[20px] ml-[5px] text-center flex flex-col items-center'>
                             {/* Volume Control */}
                             <label className='flex flex-col justify-center'>
                                 
@@ -154,11 +154,11 @@ export default function VideosComponent(props){
                                     value={videoStates[index].volume}
                                     onChange={(event) => handleVolumeChange(index, event)}
                                 />
-                                <Image src={Volume} width={10} height={10} className='pt-[5px]'/>
+                                <Image src={Volume} className="w-[20px] h-[25px] md:h-[10px] md:w-[10px] mt-[5px]" width={10} height={10}/>
                                 </label>
                                 
                                 <button onClick={(event) => handleFullscreen(index)} className='mt-[5px]'>
-                                    <Image src={Fullscreen} width={20}/>
+                                    <Image className="w-[30px] h-[30px] md:h-full md:w-full" src={Fullscreen} width={20}/>
                                 </button>
                                 </div>
                             </div>
