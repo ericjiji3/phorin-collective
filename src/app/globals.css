@@ -98,7 +98,31 @@ input{
   transition: all 0.5s ease-in;
   transition-delay: 0.4s;
 }
-
+.intro-vid{
+   /* Make video to at least 100% wide and tall */
+   min-width: 100%; 
+   min-height: 100%; 
+ 
+   /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+   width: auto;
+   height: auto;
+ 
+   /* Center the video */
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+}
+.intro-container{
+  transition: opacity 0.5s, z-index 0.5s;
+}
+@media(max-width: 500px){
+  .intro-vid{
+    /* Make video to at least 100% wide and tall */
+    min-width: 120%; 
+    transform: translate(-50%,-50%);
+ }
+}
 @keyframes expandImage {
   0%{
     height: 0;

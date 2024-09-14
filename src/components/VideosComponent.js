@@ -112,7 +112,6 @@ export default function VideosComponent(props){
                                 ref={playerRefs.current[index]} 
                                 playing={videoStates[index].isPlaying}
                                 volume={videoStates[index].volume}
-                                light={true}
                                 onProgress={(progress) => handleProgress(index, progress)}/>
                                 }
                                 <div className="controls mt-[10px]">
@@ -159,7 +158,7 @@ export default function VideosComponent(props){
                                 </label>
                                 
                                 <button onClick={(event) => handleFullscreen(index)} className='mt-[5px]'>
-                                    <Image className="w-[30px] h-[30px] md:h-full md:w-full" src={Fullscreen} width={20}/>
+                                    <Image className="w-[30px] h-[30px] md:h-full md:w-full" src={Fullscreen} width={20} height={20}/>
                                 </button>
                                 </div>
                             </div>
@@ -175,7 +174,7 @@ export default function VideosComponent(props){
                 props.videos.map((video, index) => {
                     return(
                         <div key={index} className={activeInd == index ? 'thumbnail active relative' : 'thumbnail relative'} onClick={() => setActiveInd(index)}>
-                           {hasWindow && <ReactPlayer url={"https:" + video.fields.file.url + "#t=1"} width={150} height={150} light={true}/>}
+                           {hasWindow && <ReactPlayer url={"https:" + video.fields.file.url + "#t=1"} width={150} height={150}/>}
                            
                         </div>
                     )
