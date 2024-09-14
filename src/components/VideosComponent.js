@@ -140,7 +140,7 @@ export default function VideosComponent(props){
                             </div>
                             </div>
                             
-                            <div className='relative bottom-[30px] md:bottom-[20px] ml-[5px] text-center flex flex-col items-center'>
+                            <div className='relative bottom-[30px] hidden md:block md:bottom-[20px] ml-[5px] text-center flex flex-col items-center'>
                             {/* Volume Control */}
                             <label className='flex flex-col justify-center'>
                                 
@@ -154,7 +154,7 @@ export default function VideosComponent(props){
                                     value={videoStates[index].volume}
                                     onChange={(event) => handleVolumeChange(index, event)}
                                 />
-                                <Image src={Volume} className="w-[20px] h-[25px] md:h-[10px] md:w-[10px] mt-[5px]" width={10} height={10}/>
+                                <Image src={Volume} className="w-[20px] h-[25px] md:h-[10px] md:w-[10px] mx-auto mt-[5px]" width={10} height={10}/>
                                 </label>
                                 
                                 <button onClick={(event) => handleFullscreen(index)} className='mt-[5px]'>

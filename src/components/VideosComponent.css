@@ -42,6 +42,7 @@
     vertical-align: bottom;
     overflow: hidden;
     background-color: #e2e2e28c;
+    margin: auto;
 }
 .volume-bar::-webkit-slider-runnable-track {
     height: 10px;
@@ -63,6 +64,7 @@
     height: 10px;
     -webkit-appearance: none;
     background-color: #e2e2e28c;
+    margin: auto;
 } 
 .progress-bar::-webkit-slider-runnable-track {
     height: 10px;
@@ -81,52 +83,8 @@
 
 @media (max-width: 500px) {
     .thumbnail div{
-        width: 115px!important;
-        height: 115px!important;
+        width: 100px!important;
+        height: 100px!important;
     }
-    .volume-bar{
-        writing-mode: vertical-lr;
-        direction: rtl;
-        -webkit-appearance: none;
-        width: 20px;
-        height: 300px;
-        vertical-align: bottom;
-        overflow: hidden;
-        background-color: #e2e2e28c;
-    }
-    .volume-bar::-webkit-slider-runnable-track {
-        height: 20px;
-        -webkit-appearance: none;
-        color: #13bba4;
-        margin-top: -1px;
-      }
-    .volume-bar::-webkit-slider-thumb {
-        width: 20px;
-          -webkit-appearance: none;
-          height: 2px;
-          cursor: ns-resize;
-          background: #000000;
-          box-shadow: 0px 500px 0 500px #c2c2c2;
-    } 
-    .progress-bar{
-        overflow: hidden;
-        width: 100%;
-        height: 20px;
-        -webkit-appearance: none;
-        background-color: #e2e2e28c;
-    } 
-    .progress-bar::-webkit-slider-runnable-track {
-        height: 20px;
-        -webkit-appearance: none;
-        color: #13bba4;
-        margin-top: -1px;
-      }
-    .progress-bar::-webkit-slider-thumb {
-        width: 2px;
-          -webkit-appearance: none;
-          height: 50px;
-          cursor: ew-resize;
-          background: #000000;
-          box-shadow: -8000px 0 0 8000px #c2c2c2;
-    } 
+    
 }
