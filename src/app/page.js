@@ -18,7 +18,7 @@ export default function Home() {
         </video>
         <span className="absolute bottom-[5%] left-[50%] translate-x-[-50%] bg-white border border-black px-[1rem] block"><b>CLICK TO CONTINUE</b></span>
       </div>
-      <div className="w-full md:w-[45%] h-[60%] md:h-full flex flex-col">
+      <div className={click ? "w-full md:w-[45%] h-[60%] md:h-full flex flex-col opacity-1" : "w-full md:w-[45%] h-[60%] md:h-full flex flex-col opacity-0"}>
         <div className="slide mb-[1rem] md:mb-[5rem] relative">
           <div className="relative overflow-hidden">
             <h1>PHORIN COLLECTIVE</h1>
@@ -39,8 +39,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="relative w-full md:w-[45%] h-[40%] md:h-full overflow-hidden">
-      <div className="absolute top-0 left-0 block w-full h-full bg-white animate-slideY"></div>
+      <div className={click ? "relative w-full md:w-[45%] h-[40%] md:h-full overflow-hidden opacity-1" : "relative w-full md:w-[45%] h-[40%] md:h-full overflow-hidden opacity-0"}>
+        <div className="absolute top-0 left-0 block w-full h-full bg-white animate-slideY"></div>
         <Image src={HomeImage} className="w-full h-full object-cover" width={500} alt="oops"/>
       </div>
     </div>
