@@ -7,7 +7,7 @@ import { motion,AnimatePresence } from "framer-motion";
 export default function Home() {
   return (
     <div className="absolute top-0 px-[1rem] md:px-[3.75rem] pt-[5.5rem] md:pt-[6.88rem] pb-[1.5rem] md:pb-[2.5rem] flex flex-col-reverse md:flex-row flex-wrap gap-x-[10%] w-full h-full justify-between">
-      <div className="w-full md:w-[45%] h-[49%] md:h-full flex flex-col">
+      <div className="w-full md:w-[45%] h-[60%] md:h-full flex flex-col">
         <div className="slide mb-[1rem] md:mb-[5rem] relative">
           <div className="relative overflow-hidden">
             <h1>PHORIN COLLECTIVE</h1>

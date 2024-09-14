@@ -168,7 +168,7 @@ export default function VideosComponent(props){
                 })
             }
             </div>
-            <div className='flex justify-center w-full relative overflow-hidden mt-[2rem] '>
+            <div className='flex justify-center mx-auto w-[95%] md:w-full relative overflow-hidden mt-[2rem] '>
             <div className='absolute block w-full h-full top-0 left-0 bg-white animate-slide z-[3]'></div>
             {
                 props.videos.map((video, index) => {
