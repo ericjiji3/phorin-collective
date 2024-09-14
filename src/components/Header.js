@@ -22,7 +22,7 @@ export default function Header(){
                 <div className="relative z-[3]">
                     <span className={active ? "index active font-bold text-white hover:cursor-pointer" : "index font-bold text-black hover:cursor-pointer"} onClick={(e) => toggleNav(e)}>INDEX</span>
                 </div>
-                <div className={`${active ? "nav-links active absolute right-[-10px] md:right-[-15px] top-[-7.5px] md:top-[-15px] pt-[2rem] pb-[5%] w-[150%] md:w-full max-h-[500px] max-w-[800px] overflow-hidden z-[2] bg-black text-white" : "nav-links absolute right-[-10px] md:right-[-15px] top-[-7.5px] md:top-[-15px] pt-[2rem] pb-[5%] w-[150%] md:w-full max-h-0 max-w-0 overflow-hidden z-[2] bg-black text-white"}`}>
+                <div className={`${active ? "nav-links active absolute right-[-10px] md:right-[-15px] top-[-7.5px] md:top-[-15px] pt-[2rem] pb-[5%] w-[175%] md:w-full max-h-[500px] max-w-[800px] overflow-hidden z-[2] bg-black text-white" : "nav-links absolute right-[-10px] md:right-[-15px] top-[-7.5px] md:top-[-15px] pt-[2rem] pb-[5%] w-[175%] md:w-full max-h-0 max-w-0 overflow-hidden z-[2] bg-black text-white"}`}>
                     <Link onClick={(e) => toggleNav(e)} className="flex items-baseline justify-end mr-[15px] mt-[10px]" href="/">
                         <div>01.</div>
                         <h2 className="ml-[5px]">HOME</h2>

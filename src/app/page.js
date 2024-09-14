@@ -18,7 +18,6 @@ export default function Home() {
             <div className="absolute top-0 left-0 block w-full h-full bg-white animate-slideDelay"></div>
           </div>
         </div>
-        
         <div className="h-full relative home-nav">
           <div className="absolute bottom-0 ml-[1.25rem]">
             <Link className="block w-fit" href="">01. Articles</Link>
@@ -29,7 +28,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="relative w-full md:w-[45%] h-[49%] md:h-full overflow-hidden">
+      <div className="relative w-full md:w-[45%] h-[40%] md:h-full overflow-hidden">
       <div className="absolute top-0 left-0 block w-full h-full bg-white animate-slideY"></div>
         <Image src={HomeImage} className="w-full h-full object-cover" width={500} alt="oops"/>
       </div>
