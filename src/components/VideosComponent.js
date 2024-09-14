@@ -174,7 +174,7 @@ export default function VideosComponent(props){
                 props.videos.map((video, index) => {
                     return(
                         <div key={index} className={activeInd == index ? 'thumbnail active relative' : 'thumbnail relative'} onClick={() => setActiveInd(index)}>
-                           {hasWindow && <ReactPlayer url={"https:" + video.fields.file.url} width={150} height={150}/>}
+                           {hasWindow && <ReactPlayer url={"https:" + video.fields.file.url + "#t=1"} width={150} height={150}/>}
                            
                         </div>
                     )
