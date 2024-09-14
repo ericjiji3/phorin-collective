@@ -1,6 +1,8 @@
+'use client';
 import Image from "next/image";
 import Link from "next/link";
 import HomeImage from "@/../public/images/home-img.png";
+import { motion,AnimatePresence } from "framer-motion";
 
 export default function Home() {
   return (
@@ -32,7 +34,6 @@ export default function Home() {
         <Image src={HomeImage} className="w-full h-full object-cover" width={500} alt="oops"/>
       </div>
     </div>
-      
 
   );
 }

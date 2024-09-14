@@ -22,7 +22,8 @@
     z-index: 0; */
 }
 .thumbnail.active video{
-    outline: 2px solid #000000;
+    border: 2px solid #000000;
+    border-bottom: 3px solid #000000;
     position: relative;
     z-index: 2;
 }

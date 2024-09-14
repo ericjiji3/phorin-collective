@@ -97,20 +97,23 @@ export default function VideosComponent(props){
     return(
         // className='flex flex-row-reverse justify-center gap-[50px]'
         <div>
-            <div className='flex justify-center'>
+            <div className='relative overflow-hidden flex justify-center'>
             {
                 props.videos.map((video, index) => {
                     return(
-                        <div key={index} className={activeInd == index ? 'video-container flex flex-col justify-center w-fit items-center' : 'video-container hidden justify-center w-fit'}>
+                        <div key={index} className={activeInd == index ? 'video-container flex flex-col justify-center w-fit items-center relative overflow-hidden' : 'video-container hidden justify-center w-fit relative overflow-hidden'}>
+                            <div className='absolute block w-full h-full bg-white z-[1] animate-slideY'></div>
                             <div className='flex items-baseline'>
-                            <div className='player-container' >
-                            {hasWindow && <ReactPlayer 
+                            <div className='player-container'>
+                            {hasWindow && 
+                                <ReactPlayer 
                                 url={"https:" + video.fields.file.url} 
                                 controls={false} 
                                 ref={playerRefs.current[index]} 
                                 playing={videoStates[index].isPlaying}
                                 volume={videoStates[index].volume}
-                                onProgress={(progress) => handleProgress(index, progress)}/>}
+                                onProgress={(progress) => handleProgress(index, progress)}/>
+                                }
                                 <div className="controls mt-[10px]">
                                 {/* Play/Pause Button */}
                                 <button onClick={() => handlePlayPause(index)} className='pr-[5px]'>
@@ -165,7 +168,8 @@ export default function VideosComponent(props){
                 })
             }
             </div>
-            <div className='flex justify-center relative mt-[2rem] mx-[5rem]'>
+            <div className='flex justify-center w-full relative overflow-hidden mt-[2rem] '>
+            <div className='absolute block w-full h-full top-0 left-0 bg-white animate-slide z-[3]'></div>
             {
                 props.videos.map((video, index) => {
                     return(

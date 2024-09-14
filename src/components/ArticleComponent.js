@@ -7,7 +7,8 @@ export default function ArticleComponent(props){
     const [activeInd, setActiveInd] = useState(0);
 
     return(
-        <div className="relative w-full h-full px-[1.25rem]">
+        <div className="relative w-full h-full overflow-hidden px-[1.25rem]">
+            <div className="absolute block w-full h-full top-0 left-0 z-[2] bg-white animate-slideY"></div>
             <div className="relative z-[1] pt-[1.25rem]">
                 {props.articles.items.map((article, index) => {
                     return(

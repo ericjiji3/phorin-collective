@@ -38,7 +38,7 @@ export default function Contact() {
       };
   return (
     <div className="absolute top-0 px-[1rem] md:px-[3.75rem] pt-[5.5rem] md:pt-[6.88rem] pb-[2.5rem] flex flex-col md:flex-row justify-between flex-wrap gap-x-[10%] w-full h-full">
-        <div className="absolute right-[1rem] md:right-[35%] top-[39%] md:top-[60%] z-[1]">
+        <div className="absolute right-[1rem] md:right-[35%] top-[41%] md:top-[60%] z-[1]">
             <div className="relative overflow-hidden">
               <div className="block absolute w-full h-full top-0 left-0 animate-slide bg-white"></div>
               <h1>SIGN UP</h1>
@@ -54,7 +54,7 @@ export default function Contact() {
         </div>
         
         <div className="relative overflow-hidden">
-          <div className="block w-full h-full absolute top-0 left-0 bg-white animate-slideY"></div>
+          <div className="block w-full h-full absolute top-0 left-0 bg-white animate-slideY" style={{ animationDelay: `1.75s!important`}}></div>
           <Image src={ContactImage} className="w-full h-full object-cover object-top" width={500} alt="oops"/>
         </div>
       </div>
