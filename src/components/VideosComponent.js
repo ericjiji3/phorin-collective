@@ -107,7 +107,7 @@ export default function VideosComponent(props){
                             <div className='player-container'>
                             {hasWindow && 
                                 <ReactPlayer 
-                                url={"https:" + video.fields.file.url} 
+                                url={"https:" + video.fields.file.url + "#t=0.01"} 
                                 controls={false} 
                                 ref={playerRefs.current[index]} 
                                 playing={videoStates[index].isPlaying}
