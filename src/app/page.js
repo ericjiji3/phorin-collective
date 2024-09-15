@@ -21,7 +21,8 @@ export default function Home() {
             <div className="absolute top-0 left-0 block w-full h-full bg-white animate-slide"></div>
           </div>
           <div className="relative overflow-hidden">
-            <span>A collective based in Austin, TX. Focused on pushing forward fashion, art, and community.</span>
+            <span>Knowledge is power.</span><br/>
+            <span>Inspiration is everywhere.</span>
             <div className="absolute top-0 left-0 block w-full h-full bg-white animate-slideDelay"></div>
           </div>
         </div>
