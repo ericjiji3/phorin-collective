@@ -3,7 +3,8 @@ import Image from "next/image";
 import ArticleComponent from "@/components/ArticleComponent";
 
 export default async function Articles(){
-    const blogEntries = await getBlogEntries();
+    const data = await getBlogEntries();
+    const blogEntries = JSON.parse(JSON.stringify(data))
     console.log("Home -> blogEntries", blogEntries.items[0].fields.articleImage.fields.file.details)
     
     return(
