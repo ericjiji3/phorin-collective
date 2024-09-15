@@ -16,6 +16,9 @@
 .video-container video{
     width: fit-content!important;
 }
+.thumbnail:hover{
+    cursor: pointer;
+}
 .thumbnail video{
     object-fit: cover;
     /* outline: none;
