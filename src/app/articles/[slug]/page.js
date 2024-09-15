@@ -9,7 +9,7 @@ export default async function Article(props){
     console.log(article);
 
     return(
-        <div className="px-[1rem] md:px-[3.75rem] pb-[1.5rem] md:pb-[2.5rem] relative overflow-hidden">
+        <div className="px-[1rem] md:px-[3.75rem] pb-[1.5rem] md:pb-[2.5rem] relative overflow-hidden opacity-0 animate-fadeIn">
             <div className="absolute z-[2] block top-0 left-0 w-full h-full bg-white animate-slide"
             ></div>
             <div className="relative">

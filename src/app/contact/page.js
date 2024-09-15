@@ -37,7 +37,7 @@ export default function Contact() {
         }
       };
   return (
-    <div className="relative md:absolute top-0 px-[1rem] md:px-[3.75rem] pt-0 md:pt-[5.5rem] md:pt-[6.88rem] pb-[2.5rem] flex flex-col md:flex-row justify-between flex-wrap gap-x-[10%] w-full h-full">
+    <div className="relative md:absolute top-0 px-[1rem] md:px-[3.75rem] pt-0 md:pt-[5.5rem] md:pt-[6.88rem] pb-[2.5rem] flex flex-col md:flex-row justify-between flex-wrap gap-x-[10%] w-full h-full opacity-0 animate-fadeIn">
         <div className="absolute right-[1rem] md:right-[35%] top-[38%] md:top-[60%] z-[1]">
             <div className="relative overflow-hidden">
               <div className="block absolute w-full h-full top-0 left-0 animate-slide bg-white"></div>

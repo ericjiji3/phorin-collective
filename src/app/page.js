@@ -11,7 +11,7 @@ export default function Home() {
   const [click, setClick] = useState(false);
 
   return (
-    <div className="absolute top-0 px-[1rem] md:px-[3.75rem] pt-[5.5rem] md:pt-[6.88rem] pb-[1.5rem] md:pb-[2.5rem] flex flex-col-reverse md:flex-row flex-wrap gap-x-[10%] w-full h-full justify-between">
+    <div className="absolute top-0 px-[1rem] md:px-[3.75rem] pt-[5.5rem] md:pt-[6.88rem] pb-[1.5rem] md:pb-[2.5rem] flex flex-col-reverse md:flex-row flex-wrap gap-x-[10%] w-full h-full justify-between opacity-0 animate-fadeIn">
         
       
       <div className={click ? "w-full md:w-[45%] h-[60%] md:h-full flex flex-col opacity-1" :"w-full md:w-[45%] h-[60%] md:h-full flex flex-col opacity-1"}>
