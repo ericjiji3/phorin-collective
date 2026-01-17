@@ -5,11 +5,12 @@ import HomeImage from "@/../public/images/home-img.png";
 import Intro from '../../public/images/intro.gif';
 // import IntroVid from '../../public/images/introVid.mov';
 import { motion,AnimatePresence } from "framer-motion";
+import { Stream } from "@cloudflare/stream-react";
 import { useState } from "react";
 
 export default function Home() {
   const [click, setClick] = useState(false);
-
+  const videoIdOrSignedToken = "9c36256b4fd499bdceef365b72b2c376";
   return (
     <div className="absolute top-0 px-[1rem] md:px-[3.75rem] pt-[5.5rem] md:pt-[6.88rem] pb-[1.5rem] md:pb-[2.5rem] flex flex-col-reverse md:flex-row flex-wrap gap-x-[10%] w-full h-full justify-between opacity-0 animate-fadeIn">
         
@@ -39,6 +40,17 @@ export default function Home() {
       <div className={click ? "relative w-full md:w-[45%] h-[40%] md:h-full overflow-hidden opacity-1" :"relative w-full md:w-[45%] h-[40%] md:h-full overflow-hidden opacity-1"}>
         <div className="absolute top-0 left-0 block w-full h-full bg-white animate-slideY"></div>
         <Image src={HomeImage} className="w-full h-full object-cover" width={500} alt="oops"/>
+      </div>
+      <div>
+      <div>
+   
+      <iframe
+    src="https://customer-85krc1vqa8p435i4.cloudflarestream.com/907538cfc40ea84d9ff2ed4f9ef3e39d/iframe"
+   
+    allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+    allowfullscreen="true"
+  ></iframe>
+</div>
       </div>
     </div>
 
