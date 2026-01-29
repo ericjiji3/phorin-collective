@@ -29,11 +29,13 @@ export default function Home() {
         </div>
         <div className="h-full relative home-nav">
           <div className="absolute bottom-0 ml-[1.25rem]">
-            <Link className="block w-fit" href="">01. Articles</Link>
-            <Link className="block w-fit" href="/contact">02. Contact</Link>
-            <Link className="block w-fit" href="">03. Videos</Link>
-            <Link className="block w-fit" href="">04. Shop</Link>
-            <Link className="block w-fit" href="">05. Photos</Link>
+          <Link className="block w-fit" href="/radio">01. Radio</Link>
+            <Link className="block w-fit" href="/articles">02. Articles</Link>
+            <Link className="block w-fit" href="/contact">03. Contact</Link>
+            <Link className="block w-fit" href="/videos">04. Videos</Link>
+            <Link className="block w-fit" href="">05. Shop</Link>
+            <Link className="block w-fit" href="/photos">06. Photos</Link>
+            
           </div>
         </div>
       </div>
@@ -44,12 +46,7 @@ export default function Home() {
       <div>
       <div>
    
-      <iframe
-    src="https://customer-85krc1vqa8p435i4.cloudflarestream.com/907538cfc40ea84d9ff2ed4f9ef3e39d/iframe"
-   
-    allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-    allowfullscreen="true"
-  ></iframe>
+      
 </div>
       </div>
     </div>

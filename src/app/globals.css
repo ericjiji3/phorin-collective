@@ -100,8 +100,8 @@ input{
 }
 .intro-vid{
    /* Make video to at least 100% wide and tall */
-   min-width: 100%; 
-   min-height: 100%; 
+   /* min-width: 100%; 
+   min-height: 100%;  */
  
    /* Setting width & height to auto prevents the browser from stretching or squishing the video */
    width: auto;
@@ -115,12 +115,23 @@ input{
 }
 .intro-container{
   transition: opacity 0.5s, z-index 0.5s;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  outline: 1px solid black;
+  background-image: 
+    linear-gradient(to right, black 1px, transparent 1px),
+    linear-gradient(to bottom, black 1px, transparent 1px);
+  background-size: 29px 29px;
+  background-position: calc(50% + 146px) calc(50% + 145px);
+  background-color: white;
 }
 @media(max-width: 500px){
   .intro-vid{
     /* Make video to at least 100% wide and tall */
-    min-width: 120%; 
-    transform: translate(-50%,-50%);
+    /* min-width: 120%; 
+    transform: translate(-50%,-50%); */
+    
  }
 }
 @keyframes expandImage {
