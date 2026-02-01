@@ -15,7 +15,7 @@ export default function ArticleComponent(props){
                         <div key={index}>
                             <Link className="inline-block" href={`/articles/${article.fields.slug}`} onMouseOver={() => setActiveInd(index)}>
                                 <span>{index > 9 ? index + 1 : '0' + (index + 1)}.</span>
-                                <h1>{article.fields.articleName}</h1>
+                                <h1 className="text-[1.5rem]/[100%] md:text-[2rem]/[100%]">{article.fields.articleName}</h1>
                             </Link>    
                         </div>
                     )
