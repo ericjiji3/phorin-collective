@@ -12,7 +12,7 @@ export default function Radio(){
             </span>
             <iframe
                     src="https://customer-85krc1vqa8p435i4.cloudflarestream.com/907538cfc40ea84d9ff2ed4f9ef3e39d/iframe"
-                    className="w-full h-full"
+                    className="w-full md:h-full h-[225px]"
                     allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
                     allowfullscreen="true"
                 ></iframe>
