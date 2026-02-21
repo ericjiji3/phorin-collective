@@ -126,6 +126,9 @@ input{
   background-position: calc(50% + 146px) calc(50% + 145px);
   background-color: white;
 }
+.minnit-chat-sembed{
+  width: 30%!important;
+}
 @media(max-width: 500px){
   .intro-vid{
     /* Make video to at least 100% wide and tall */
@@ -133,6 +136,15 @@ input{
     transform: translate(-50%,-50%); */
     
  }
+ .minnit-chat-sembed{
+  width: 100%!important;
+  align-items: center!important;
+  justify-content: center!important;
+  margin: 0 auto!important;
+  display: flex!important;
+  flex-direction: column!important;
+
+}
 }
 @keyframes expandImage {
   0%{

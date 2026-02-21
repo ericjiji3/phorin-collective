@@ -10,13 +10,16 @@ export default function Radio(){
             ></div>
                 <b>RADIO</b>
             </span>
+            <div className="flex md:flex-row flex-col h-full gap-4">
             <iframe
                     src="https://customer-85krc1vqa8p435i4.cloudflarestream.com/907538cfc40ea84d9ff2ed4f9ef3e39d/iframe"
                     className="w-full md:h-full h-[225px]"
                     allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
                     allowfullscreen="true"
                 ></iframe>
-        
+            <span style={{display: "none"}} className="minnit-chat-sembed" data-chatname="https://organizations.minnit.chat/338648262111327/c/Main?embed" data-style="width:90%; height:500px; max-height:90vh;" data-version="1.55">Chat</span>
+            </div>
+            
     </div>
     )
 }

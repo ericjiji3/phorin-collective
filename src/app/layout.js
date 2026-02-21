@@ -16,6 +16,9 @@ export default function RootLayout({ children }) {
   
   return (
     <html lang="en">
+      <head>
+      <script src="https://minnit.chat/js/embed.js?c=1758971289" defer></script>
+      </head>
       <body className={inter.className}>
         <IntroVideo/>
         <Header/>
