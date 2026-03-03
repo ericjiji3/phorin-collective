@@ -1,10 +1,13 @@
 'use client'
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import ContactImage from "@/../public/images/contact-img.png";
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
+  const form = useRef();
+  const [success, setSuccess] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -21,20 +24,19 @@ export default function Contact() {
     
       const handleSubmit = async (e) => {
         e.preventDefault();
-        const res = await fetch('/api/contact', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        });
-    
-        if (res.ok) {
-          alert('Message sent successfully!');
-          setFormData({ name: '', email: '', message: '' });
-        } else {
-          alert('Failed to send message.');
-        }
+
+        emailjs
+          .sendForm(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, form.current, {
+            publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+          })
+          .then(
+            () => {
+              setSuccess(true);
+            },
+            (error) => {
+              console.log('FAILED...', error.text);
+            },
+          );
       };
   return (
     <div className="relative md:absolute top-0 px-[1rem] md:px-[3.75rem] pt-0 md:pt-[5.5rem] md:pt-[6.88rem] pb-[2.5rem] flex flex-col md:flex-row justify-between flex-wrap gap-x-[10%] w-full h-full opacity-0 animate-fadeIn">
@@ -61,9 +63,8 @@ export default function Contact() {
       <div className="relative overflow-hidden w-full md:w-[45%] h-[47.5%] md:h-full flex flex-col mt-[2.5rem] md:mt-0">
         <div className="block absolute w-full h-full top-0 left-0 animate-slide bg-white"></div>
         <span className="block mb-[0.6rem]"><b>PHORIN COLLECTIVE</b></span>
-        <span className="block mb-[1.5rem] md:mb-[3rem]">Lorem ipsum odor amet, consectetuer adipiscing elit. Aenean lacinia sem taciti interdum natoque magna faucibus. Lorem proin ultricies morbi aliquam ultricies vestibulum facilisi vestibulum eu.</span>
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} ref={form}>
                 <div className="flex flex-col">
                     <label htmlFor="name">Name</label>
                     <input
@@ -89,9 +90,8 @@ export default function Contact() {
                     />
                 </div>
                 <div className="w-full text-end">
-                    <button type="submit"><b>SUBMIT</b></button>
+                    <button type="submit" disabled={success}><b>{success ? 'MESSAGE SENT' : 'SUBMIT'}</b></button>
                 </div>
-                
             </form>
         </div>
         <div className="h-full relative">
