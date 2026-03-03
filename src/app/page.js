@@ -34,7 +34,7 @@ export default function Home() {
             <Link className="block w-fit" href="/contact">03. Contact</Link>
             <Link className="block w-fit" href="/videos">04. Videos</Link>
             <Link className="block w-fit" href="">05. Shop</Link>
-            <Link className="block w-fit" href="/photos">06. Photos</Link>
+            {/* <Link className="block w-fit" href="/photos">06. Photos</Link> */}
             
           </div>
         </div>

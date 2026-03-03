@@ -43,10 +43,10 @@ export default function Header(){
                         <div>05.</div>
                         <h2 className="ml-[5px]">SHOP</h2>
                     </Link>
-                    <Link onClick={(e) => toggleNav(e)} className="flex items-baseline justify-end mr-[15px]" href="/photos">
+                    {/* <Link onClick={(e) => toggleNav(e)} className="flex items-baseline justify-end mr-[15px]" href="/photos">
                         <div>06.</div>
                         <h2 className="ml-[5px]">PHOTOS</h2>
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
         </div>
